@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #e3e2df;
+    color: #5d001e;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Carter One', cursive;
+    font-size: 80px;
+    text-shadow: 2px 2px #ee4c7c;
+    letter-spacing: 3px;
+}
