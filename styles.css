@@ -24,8 +24,8 @@ h1 {
     letter-spacing: 3px;
 }
 
-input {
-    margin: 5px 0 20px 0;
+input:not([type='text']) {
+    margin: 5px 0 15px 0;
 }
 
 main {
@@ -40,6 +40,32 @@ main .options {
     background-color: #ccc;
     box-shadow: 0px 0px 2px #5d001e;
     border-radius: 5px;
+}
+
+form #squares {
+    margin-right: 5px;
+}
+
+form .rows,
+form .columns {
+    width: 35px;
+    height: 25px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #e3e2df;
+    color: #5d001e;
+    border: none;
+    text-align: center;
+}
+
+form .rows::selection,
+form .columns::selection {
+    background-color: #e3e2df;
+}
+
+form span {
+    margin: 0 5px;
 }
 
 .grid {
