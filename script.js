@@ -5,7 +5,6 @@ function setNumberOfSquares() {
 
 function placeSquares() {
     if (grid[0].hasChildNodes()) grid[0].innerHTML = '';
-    grid[0].style.display = 'grid';
     grid[0].style.gridTemplateColumns = `repeat(${squares.value}, 1fr)`;
     grid[0].style.gridTemplateRows = `repeat(${squares.value}, 1fr)`;
 
