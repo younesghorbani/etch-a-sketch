@@ -4,7 +4,6 @@ function setNumberOfSquares() {
 }
 
 function placeSquares() {
-    const grid = document.getElementsByClassName('grid');
     if (grid[0].hasChildNodes()) grid[0].innerHTML = '';
     grid[0].style.display = 'grid';
     grid[0].style.gridTemplateColumns = `repeat(${squares.value}, 1fr)`;
@@ -19,11 +18,21 @@ function placeSquares() {
     }
 }
 
+function changeBackgroundColor(event) {
+    const color = document.getElementById('color');
+
+    if (event.target.className === 'square') {
+        event.target.style.backgroundColor = color.value;
+    }
+}
+
 const squares = document.getElementById('squares');
 const rows = document.getElementsByClassName('rows');
 const columns = document.getElementsByClassName('columns');
+const grid = document.getElementsByClassName('grid');
 
 window.addEventListener('load', setNumberOfSquares);
 window.addEventListener('load', placeSquares);
 squares.addEventListener('input', setNumberOfSquares);
 squares.addEventListener('change', placeSquares);
+grid[0].addEventListener('mousemove', changeBackgroundColor);
