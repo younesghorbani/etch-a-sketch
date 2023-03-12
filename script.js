@@ -24,6 +24,7 @@ function useDefaultValues() {
 
 function useNormalMode(event) {
     if (event.target.className !== 'square normal') {
+        event.target.classList.remove('shading');
         event.target.classList.add('normal');
         event.target.style.opacity = '';
     }
@@ -31,9 +32,32 @@ function useNormalMode(event) {
     event.target.style.backgroundColor = color.value;
 }
 
+let opacity = '';
+function useShadingMode(event) {
+    if (event.target.style.opacity === '' && event.target.className !== 'square shading') {
+        event.target.classList.remove('normal');
+        event.target.classList.add('shading');
+        event.target.style.opacity = '0.1';
+        event.target.style.backgroundColor = color.value;
+    } else if (event.target.style.opacity !== '1' && event.target.className === 'square shading') {
+        event.target.style.backgroundColor = color.value;
+        opacity = event.target.style.opacity;
+        opacity = Number.parseFloat(opacity);
+        opacity = (opacity + 0.1).toString();
+        event.target.style.opacity = opacity;
+    }
+}
+
 function useActivatedMode(event) {
     if (event.target.id === 'normal') {
+        color.disabled = false;
+        grid[0].removeEventListener('mouseover', useShadingMode);
         grid[0].addEventListener('mouseover', useNormalMode);
+    } else if (event.target.id === 'shading') {
+        color.value = '#000000';
+        color.disabled = true;
+        grid[0].removeEventListener('mouseover', useNormalMode);
+        grid[0].addEventListener('mouseover', useShadingMode);
     }
 }
 
