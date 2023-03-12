@@ -75,3 +75,26 @@ form span {
     height: 640px;
     background-color: #fff;
 }
+
+.modes {
+    padding: 15px;
+    border: 1px solid #5d001e;
+    border-radius: 5px;
+}
+
+.modes legend {
+    padding: 0 3px;
+}
+
+.modes input {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    background-color: #e3e2df;
+    color: #5d001e;
+    margin: 0 5px 15px 0;
+    padding: 10px 30px;
+    text-align: center;
+    border: 1px solid #5d001e;
+    border-radius: 3px;
+}
