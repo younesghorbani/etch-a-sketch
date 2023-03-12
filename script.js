@@ -22,7 +22,7 @@ function generateRandomColor() {
     const digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
 
     let randomColor = '#';
-    for (let colorCounter = 0; colorCounter < 3; colorCounter++) {
+    for (let pairCounter = 0; pairCounter < 3; pairCounter++) {
         
         let pair = '';
         for (let digitCounter = 0; digitCounter < 2; digitCounter++) {
