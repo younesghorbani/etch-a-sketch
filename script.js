@@ -5,6 +5,7 @@ function setNumberOfSquares() {
 
 function placeSquares() {
     if (grid[0].hasChildNodes()) grid[0].innerHTML = '';
+
     grid[0].style.gridTemplateColumns = `repeat(${squares.value}, 1fr)`;
     grid[0].style.gridTemplateRows = `repeat(${squares.value}, 1fr)`;
 
@@ -15,6 +16,24 @@ function placeSquares() {
     for (let counter = 0; counter < total; counter++) {
         grid[0].insertAdjacentHTML('beforeend', square.outerHTML);
     }
+}
+
+function generateRandomColor() {
+    const digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+
+    let randomColor = '#';
+    for (let colorCounter = 0; colorCounter < 3; colorCounter++) {
+        
+        let pair = '';
+        for (let digitCounter = 0; digitCounter < 2; digitCounter++) {
+            let position = Math.floor(Math.random() * 15);
+            pair += digits[position];
+        }
+
+        randomColor += pair;
+    }
+
+    return randomColor;
 }
 
 function useDefaultValues() {
