@@ -69,13 +69,6 @@ form span {
     margin: 0 5px;
 }
 
-.grid {
-    display: grid;
-    width: 640px;
-    height: 640px;
-    background-color: #fff;
-}
-
 .modes {
     padding: 15px;
     border: 1px solid #5d001e;
@@ -97,4 +90,11 @@ form span {
     text-align: center;
     border: 1px solid #5d001e;
     border-radius: 3px;
+}
+
+.grid {
+    display: grid;
+    width: 640px;
+    height: 640px;
+    background-color: #fff;
 }
