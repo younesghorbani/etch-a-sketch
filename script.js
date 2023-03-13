@@ -44,6 +44,7 @@ function useDefaultValues() {
 function useNormalMode(event) {
     if (event.target.className !== 'square normal') {
         event.target.classList.remove('shading');
+        event.target.classList.remove('colorful');
         event.target.classList.add('normal');
         event.target.style.opacity = '';
     }
@@ -55,6 +56,7 @@ let opacity = '';
 function useShadingMode(event) {
     if (event.target.style.opacity === '' && event.target.className !== 'square shading') {
         event.target.classList.remove('normal');
+        event.target.classList.remove('colorful');
         event.target.classList.add('shading');
         event.target.style.opacity = '0.1';
         event.target.style.backgroundColor = color.value;
@@ -67,16 +69,37 @@ function useShadingMode(event) {
     }
 }
 
+function useColorfulMode(event) {
+    if (event.target.className !== 'square colorful') {
+        event.target.classList.remove('normal');
+        event.target.classList.remove('shading');
+        event.target.classList.add('colorful');
+        event.target.style.opacity = '';
+    }
+
+    const color = generateRandomColor();
+    event.target.style.backgroundColor = color;
+}
+
 function useActivatedMode(event) {
     if (event.target.id === 'normal') {
+        color.value = '#000000';
         color.disabled = false;
         grid[0].removeEventListener('mouseover', useShadingMode);
+        grid[0].removeEventListener('mouseover', useColorfulMode);
         grid[0].addEventListener('mouseover', useNormalMode);
     } else if (event.target.id === 'shading') {
         color.value = '#000000';
         color.disabled = true;
         grid[0].removeEventListener('mouseover', useNormalMode);
+        grid[0].removeEventListener('mouseover', useColorfulMode);
         grid[0].addEventListener('mouseover', useShadingMode);
+    } else {
+        color.value = '#cccccc';
+        color.disabled = true;
+        grid[0].removeEventListener('mouseover', useNormalMode);
+        grid[0].removeEventListener('mouseover', useShadingMode);
+        grid[0].addEventListener('mouseover', useColorfulMode);
     }
 }
 
