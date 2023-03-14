@@ -45,6 +45,7 @@ main .options {
 
 form #squares {
     margin-right: 5px;
+    accent-color: #5d001e;
 }
 
 form .rows,
@@ -79,15 +80,26 @@ form span {
     padding: 0 3px;
 }
 
+.modes .normal,
+.modes .shading,
+.modes .colorful {
+    display: flex;
+    align-items: center;
+}
+
+.modes .shading {
+    margin: 15px 0;
+}
+
 .modes input {
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
+    width: 20px;
+    height: 20px;
     background-color: #e3e2df;
-    color: #5d001e;
-    margin: 0 5px 15px 0;
-    padding: 10px 30px;
-    text-align: center;
+    accent-color: #5d001e;
+    margin: 0 5px 0 0;
     border: 1px solid #5d001e;
     border-radius: 3px;
 }
