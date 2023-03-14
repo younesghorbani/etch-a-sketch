@@ -98,3 +98,7 @@ form span {
     height: 640px;
     background-color: #fff;
 }
+
+.grid .square {
+    transition: all 0.5s ease;
+}
