@@ -43,9 +43,7 @@ function useDefaultValues() {
 
 function useNormalMode(event) {
     if (event.target.className !== 'square normal') {
-        event.target.classList.remove('shading');
-        event.target.classList.remove('colorful');
-        event.target.classList.add('normal');
+        event.target.className = 'square normal';
         event.target.style.opacity = '';
     }
 
@@ -55,9 +53,7 @@ function useNormalMode(event) {
 let opacity = '';
 function useShadingMode(event) {
     if (event.target.style.opacity === '' && event.target.className !== 'square shading') {
-        event.target.classList.remove('normal');
-        event.target.classList.remove('colorful');
-        event.target.classList.add('shading');
+        event.target.className = 'square shading';
         event.target.style.opacity = '0.1';
         event.target.style.backgroundColor = color.value;
     } else if (event.target.style.opacity !== '1' && event.target.className === 'square shading') {
@@ -71,9 +67,7 @@ function useShadingMode(event) {
 
 function useColorfulMode(event) {
     if (event.target.className !== 'square colorful') {
-        event.target.classList.remove('normal');
-        event.target.classList.remove('shading');
-        event.target.classList.add('colorful');
+        event.target.className = 'square colorful';
         event.target.style.opacity = '';
     }
 
