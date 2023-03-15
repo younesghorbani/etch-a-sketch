@@ -41,6 +41,15 @@ function useDefaultValues() {
     placeSquares();
 }
 
+function cleanGrid(event) {
+    event.preventDefault();
+    const squares = document.querySelectorAll('.grid .square');
+    squares.forEach(square => {
+        square.className = 'square';
+        square.removeAttribute('style');
+    });
+}
+
 function useNormalMode(event) {
     if (event.target.className !== 'square normal') {
         event.target.className = 'square normal';
@@ -102,9 +111,11 @@ const rows = document.getElementsByClassName('rows');
 const columns = document.getElementsByClassName('columns');
 const color = document.getElementById('color');
 const modes = document.querySelectorAll('.modes input');
+const clear = document.querySelector('.clear button');
 const grid = document.getElementsByClassName('grid');
 
 window.addEventListener('load', useDefaultValues);
 squares.addEventListener('input', setNumberOfSquares);
 squares.addEventListener('change', placeSquares);
+clear.addEventListener('click', cleanGrid);
 modes.forEach(mode => mode.addEventListener('change', useActivatedMode));
