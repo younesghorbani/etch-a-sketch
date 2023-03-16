@@ -10,37 +10,43 @@
 </head>
 <body>
     <h1>Etch-A-Sketch</h1>
-    <main>
-        <div class="options">
-            <form>
-                <label for="squares">Grid Size</label><br>
-                <input type="range" min="1" max="100" value="16" id="squares">
-                <input type="text" class="rows" disabled>
-                <span>x</span>
-                <input type="text" class="columns" disabled><br>
-                <label for="color">Color</label><br>
-                <input type="color" id="color"><br>
-                <fieldset class="modes">
-                    <legend>Modes</legend>
-                    <div class="normal">
-                        <input type="radio" name="mode" id="normal">
-                        <label for="normal">Normal</label><br>
-                    </div>
-                    <div class="shading">
-                        <input type="radio" name="mode" id="shading">
-                        <label for="shading">Shading</label><br>
-                    </div>
-                    <div class="colorful">
-                        <input type="radio" name="mode" id="colorful">
-                        <label for="colorful">Colorful</label>
-                    </div>
-                </fieldset>
-                <div class="clear">
-                    <button>Clear</button>
-                </div>
-            </form>
-        </div>
 
+    <main>
+        <div class="left-side">
+            <div class="options">
+                <form>
+                    <label for="squares">Grid Size</label><br>
+                    <input type="range" min="1" max="100" value="16" id="squares">
+                    <input type="text" class="rows" disabled>
+                    <span>x</span>
+                    <input type="text" class="columns" disabled><br>
+                    <label for="color">Color</label><br>
+                    <input type="color" id="color"><br>
+                    <fieldset class="modes">
+                        <legend>Modes</legend>
+                        <div class="normal">
+                            <input type="radio" name="mode" id="normal">
+                            <label for="normal">Normal</label><br>
+                        </div>
+                        <div class="shading">
+                            <input type="radio" name="mode" id="shading">
+                            <label for="shading">Shading</label><br>
+                        </div>
+                        <div class="colorful">
+                            <input type="radio" name="mode" id="colorful">
+                            <label for="colorful">Colorful</label>
+                        </div>
+                    </fieldset>
+                    <div class="clear">
+                        <button>Clear</button>
+                    </div>
+                </form>
+            </div>
+            <footer>
+                <p class="author">Created by <a href="https://github.com/younesghorbani">Younes Ghorbani</a></p>
+                <p>A project from <a href="https://www.theodinproject.com/">The Odin Project</a></p>
+            </footer>
+        </div>
         <div class="grid"></div>
     </main>
 </body>
