@@ -18,6 +18,10 @@ body {
     align-items: center;
 }
 
+a {
+    color: #e3e2df;
+}
+
 h1 {
     font-family: 'Carter One', cursive;
     font-size: 80px;
@@ -32,8 +36,14 @@ input:not([type='text']) {
 main {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
     width: 100%;
+}
+
+main .left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 640px;
 }
 
 main .options {
@@ -127,11 +137,32 @@ form span {
     color: #e3e2df;
 }
 
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    background-color: #5d001e;
+    color: #e3e2df;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+footer .author {
+    margin-bottom: 5px;
+}
+
+footer a:hover {
+    text-decoration: none;
+}
+
 .grid {
     display: grid;
     width: 640px;
     height: 640px;
     background-color: #fff;
+    box-shadow: 0px 0px 2px #5d001e;
+    border-radius: 2px;
 }
 
 .grid .square {
