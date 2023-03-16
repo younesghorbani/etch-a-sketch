@@ -66,11 +66,11 @@ function useShadingMode(event) {
         event.target.style.opacity = '0.1';
         event.target.style.backgroundColor = color.value;
     } else if (event.target.style.opacity !== '1' && event.target.className === 'square shading') {
-        event.target.style.backgroundColor = color.value;
         opacity = event.target.style.opacity;
         opacity = Number.parseFloat(opacity);
         opacity = (opacity + 0.1).toString();
         event.target.style.opacity = opacity;
+        event.target.style.backgroundColor = color.value;
     }
 }
 
